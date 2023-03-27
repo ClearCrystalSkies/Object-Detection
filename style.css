@@ -1,0 +1,17 @@
+div {
+    background-color: rgba(127, 255, 212, 0.384);
+    margin-left: 40%;
+    border-radius: 20px;
+    margin-right: 40%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+p{
+    margin-bottom: 10px;
+    border : 20px blue;
+    font-size: medium;
+}
+.back{
+    border-radius: 80px;
+    margin : 10px;
+}
