@@ -1,6 +1,6 @@
 var status = Boolean;
 function preload(){
-    img = loadImage("https://media.istockphoto.com/id/1067236148/photo/air-conditioner-on-wall-and-display-led-tv.jpg?s=170x170&k=20&c=u9ZNDBPkwneWDQ4tUsTBeQvn6K54V-zohTx-ppG6AMQ=");
+    img = loadImage("https://tiimg.tistatic.com/fp/1/007/493/multi-color-bpa-free-food-grade-plastic-fridge-water-bottles-set-for-home-kitchen-and-office-040.jpg");
 }
 function setup(){
     canvas = createCanvas(500, 500);
