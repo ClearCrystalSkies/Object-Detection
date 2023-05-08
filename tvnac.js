@@ -1,4 +1,5 @@
 var status = Boolean;
+objects = [];
 function preload(){
     img = loadImage("https://media.istockphoto.com/id/1067236148/photo/air-conditioner-on-wall-and-display-led-tv.jpg?s=170x170&k=20&c=u9ZNDBPkwneWDQ4tUsTBeQvn6K54V-zohTx-ppG6AMQ=");
 }
@@ -10,6 +11,16 @@ function setup(){
 }
 function draw(){
     image(img, 0,0,500,500);
+    if(status != ""){
+        for ( i = 0; i < objects.length; i++) {
+            var percent = Math.floor(objects[i].confidence * 100);
+            fill(red);
+            text(objects[i].label +" "+ percent + "%");
+            noFill();
+            stroke(red);
+            rect(objects[i].width, objects[i].height, objects[i].x, objects[i].y);
+        }
+    }
 }
 function back(){
     window.location = "index.html";
@@ -26,4 +37,5 @@ function gotResults(error, results){
     } else{
         console.log(results);
     }
+    objects = results;
 }

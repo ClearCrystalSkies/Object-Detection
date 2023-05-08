@@ -1,4 +1,5 @@
 var status = Boolean;
+var objects = [];
 function preload(){
     img = loadImage("https://tiimg.tistatic.com/fp/1/007/493/multi-color-bpa-free-food-grade-plastic-fridge-water-bottles-set-for-home-kitchen-and-office-040.jpg");
 }
@@ -10,6 +11,16 @@ function setup(){
 }
 function draw(){
     image(img, 0,0,500,500);
+    if(status != ""){
+        for ( i = 0; i < objects.length; i++) {
+            var percent = Math.floor(objects[i].confidence * 100);
+            fill(red);
+            text(objects[i].label +" "+ percent + "%");
+            noFill();
+            stroke(red);
+            rect(objects[i].width, objects[i].height, objects[i].x, objects[i].y);
+        }
+    }
 }
 function back(){
     window.location = "index.html";
@@ -26,4 +37,5 @@ function gotResults(error, results){
     } else{
         console.log(results);
     }
+    objects = results;
 }
